@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-time MACD</title>
+  </head>
+  <body>
+    <h1>BTC/USDT Real-time MACD Data</h1>
+    <div id="data">
+      <p><strong>MACD:</strong> <span id="macd">Loading...</span></p>
+      <p><strong>price:</strong> <span id="price">Loading...</span></p>
+      <p>
+        <strong>recommendation:</strong>
+        <span id="recommendation">아직 거래하지 마세요..</span>
+      </p>
+    </div>
+
+    <script>
+      const ws = new WebSocket("ws://localhost:8000/ws");
+
+      ws.onmessage = function (event) {
+        const data = JSON.parse(event.data);
+        document.getElementById("macd").textContent = data.macd.toFixed(4);
+        document.getElementById("price").textContent = data.price;
+        document.getElementById("recommendation").textContent =
+          data.recommendation;
+      };
+    </script>
+  </body>
+</html>
