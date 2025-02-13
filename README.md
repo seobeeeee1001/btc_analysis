@@ -1,4 +1,4 @@
-# BTC 매수 추천 시스템
+# 컴퓨터 네트워크 TERM PROJECT
 
 
 **프로젝트 주제** : BTC(비트코인)의 매수 시점을 추천하는 서비스
@@ -47,6 +47,7 @@ calculate.py 파일에서 시그널 행 이전 30개의 행들의 데이터들�
 
 
 ![image](https://github.com/user-attachments/assets/8f3fedc6-1798-4f36-809c-cbfdf9094d75)
+
 그림 3 정규화된 지표값의 표준편차 및 평균
 
 따라서 이 MACD 값을 이용하여 매수 추천 알고리즘을 구현하였다. 
